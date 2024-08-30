@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import '../models/product.dart';
+import 'package:ecomshop/models/product.dart';
 
 class ProductService {
   final String apiUrl = 'https://run.mocky.io/v3/d80e7922-cfa1-4fd8-be68-8ce7ded6b5d2';
