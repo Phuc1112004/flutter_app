@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:product_app_api/screens/product_detail_page.dart';
 import '../models/product.dart';
 import '../service/api_service.dart';
 import 'product_form_page.dart';
@@ -89,14 +90,19 @@ class _ProductListPageState extends State<ProductListPage> {
 
                         if (confirmDelete == true) {
                           await apiService.deleteProduct(product.id);
-                          setState(() {}); // Cập nhật danh sách sau khi xóa
+                          setState(() {});
                         }
                       },
                     ),
                   ],
                 ),
                 onTap: () {
-                  // Điều hướng tới trang chi tiết sản phẩm nếu cần
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                  builder: (context) => ProductDetailPage(product: product),
+                  ),
+                  );
                 },
               );
             },
